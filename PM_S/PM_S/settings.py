@@ -1,3 +1,5 @@
+
+
 """
 Django settings for PM_S project.
 
@@ -37,15 +39,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #local
     'project_docs',
     'projects',
     'specialities',
     'tasks',
     'teams',
     'users',
-    
+    #DRF
+    'rest_framework',
+    #API documentation
+    'rest_framework_swagger',
 ]
 
+#Swagger
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
+
+#Define where User model is located
 AUTH_USER_MODEL = "users.User"
 
 MIDDLEWARE = [

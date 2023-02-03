@@ -7,4 +7,10 @@ class Projects(models.Model):
     start_date = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(auto_now_add=True)
     price = models.FloatField(null=True)
-    team_id = models.ForeignKey(Teams, on_delete=models.CASCADE)
+    team_id = models.ForeignKey(Teams, on_delete=models.CASCADE, blank=True)
+
+    class Meta: 
+        verbose_name_plural = "Projects"
+
+    def __str__(self):
+        return self.name
